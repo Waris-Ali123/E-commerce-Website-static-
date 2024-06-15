@@ -1,0 +1,283 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: nunito;
+}
+
+
+body{
+    width: 100%;
+    background-color: aliceblue;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+h5{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h6{
+    color: #d8d8d8;
+}
+
+hr{
+    width: 30px;
+    margin:3px auto;
+    color: rgb(255, 106, 0);
+}
+
+p{
+    color: #505050;
+}
+
+/* HomePage starts */
+#header{
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top:0;
+    left:0;
+    padding: 15px 80px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aliceblue;
+    z-index: 999;
+    
+}
+    
+
+#header .logo{
+    color:rgb(0, 214, 199);
+    font-family: cursive;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+
+#header .navbar-ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    /* margin:auto; */
+}
+
+#header .nav-item .nav-link{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: medium;
+    padding: 0 20px;
+    color: black;
+    list-style: none;
+    width: cover;
+}
+
+#header .nav-item .nav-link:hover{
+    color:rgb(0, 214, 199);
+}
+
+#header .nav-item .nav-link #search-bar{
+    font-size: 18px;
+}
+
+#header .collapse-btn{
+    display: none;
+    border-radius: 5px;
+    border: none;
+    background-color: inherit;
+}
+
+#bars{
+    font-size: 20px;
+    padding:5px 7px;
+}
+
+#bars:hover{
+    color:rgb(0, 214, 199);
+}
+
+#cross {
+    display: none;
+}
+
+
+
+
+#featured{
+    width: 100%;
+    /* height: 200vh; */
+    margin-top: 15px;
+}
+
+.product-container{
+    text-align: center;
+}
+
+.product-container p{
+    margin: 5px 0;
+}
+
+
+.prod-block{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.product {
+    width: 350px;
+    max-height: max-content;
+    cursor: pointer;
+    margin: 15px 0;
+    /* padding: 0 25px; */
+
+}
+
+.product img{
+    width: 100%;
+    height: 60%;
+    margin-bottom: 5px;
+    border-radius: 5%;
+}
+
+.product:hover img{
+    opacity: 0.7;
+}
+
+.product .star{
+    color:gold;
+    margin-bottom: 5px;
+    }
+    
+.product h3{
+    font-weight: 550;
+    margin-bottom: 5px;
+    }
+    
+.product h2{
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.product .buy-btn{
+    background: #fb774b;
+    padding: 8px 15px;
+    border-radius: 10%;
+    border:none;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.product:hover .buy-btn{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Query Stars */
+
+@media screen and (max-width:766px) {
+    #header {
+        padding: 0 20px;
+    }
+
+    #header .collapse-btn{
+        display:initial;
+    }
+
+    #header .collapse-btn:hover{
+        background-color: rgba(0, 0, 0, 0.752);
+    }
+    
+    #header .navbar-ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+        height: 100vh;
+        position: absolute;
+        top:0;
+        right: -70%;
+        background-color: aliceblue;
+        box-shadow: 0 10px 60px rgba(0,0,0,0.1);
+        padding-top: 80px;
+        font-size: large;
+        transition: 0.3s ease;
+        
+    }
+
+    #header .nav-item {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    #header .nav-item .nav-link{
+        width: 100%;
+    }
+
+    #cross {
+        display: initial;
+        position: absolute;
+        top:30px;
+        font-size: large;
+        margin-left: 25px;
+    }
+
+    #cross:hover,
+    #cross :focus{
+        color: #080808;
+    }
+
+    #header .active{
+        right: 0px;
+    }
+
+}
+
