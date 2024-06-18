@@ -143,7 +143,7 @@ body{
 
 /* checkout Container */
 #checkout-container{
-    height: 390px;
+    height: 430px;
     flex:.9;
     background-color: rgba(145, 255, 242, 0.288);
     margin-top: 35px;
