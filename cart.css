@@ -1,0 +1,237 @@
+body{
+    background-color: rgba(236, 247, 255, 0.734);
+    /* display: flex; */
+}
+
+#cart-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin:20px;
+}
+
+#cart-items{
+    flex:2;
+    /* width: 60%; */
+    border-radius: 25px;
+    margin-top: 35px;
+    margin-right: 15px;
+    margin-left: 35px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0,0.2);
+    padding: 20px 20px;
+    background-color: white;
+}
+
+#cart-table{
+    border:none;
+    width: 100%;
+    overflow-x: scroll;
+
+}
+
+.cart-row{
+    width: 100%;
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 5px;
+}
+
+.cart-row th{
+    width: 19%;
+}
+
+.cart-row th:nth-child(2){
+    width: 25%;
+    font-size: large;
+}
+
+
+
+.cart-row td{
+    width: 19%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 550;
+}
+
+.cart-row td:nth-child(2){
+    width: 25%;
+}
+
+.cart-row th:nth-child(6),
+.cart-row td:nth-child(6){
+    width: 5%;
+    padding: 0 10px;
+}
+
+
+
+
+.border{
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
+/* .cart-row td:nth-child(1){
+    background-color: wheat;
+}
+.cart-row td:nth-child(2){
+    background-color: gray;
+}
+.cart-row td:nth-child(3){
+    background-color: green;
+}
+.cart-row td:nth-child(4){
+    background-color: wheat;
+}
+.cart-row td:nth-child(5){
+    background-color: cyan;
+} */
+
+
+.product-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    /* background-color: blue; */
+}
+
+.cart-row .price{
+    color: black;
+    font-weight: bold;
+}
+
+.cart-row i{
+    border-radius: 50%;
+    background-color: white;
+    padding: 3px;
+    font-size: 13px;
+}
+
+.cart-row i:hover{
+    background-color: black;
+    color: white;
+}
+
+.cart-row .cross i{
+    color: black;
+    transition: 0.5 ease;
+
+}
+
+.cart-row .cross i:hover{
+    transform: scale(1.5);
+    background-color: white;
+    color: red;
+
+}
+
+.cart-row .total-price{
+    color: rgb(255, 153, 0);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+/* checkout Container */
+#checkout-container{
+    height: 390px;
+    flex:.9;
+    background-color: rgba(145, 255, 242, 0.288);
+    margin-top: 35px;
+    border-radius: 25px;
+    padding: 20px 25px ;
+    /* border: .5px solid rgba(128, 128, 128, 0.733); */
+    box-shadow: 2px 3px 5px rgba(0, 0, 0,0.2);
+    position: relative;
+}
+
+#promo-code{
+    margin-top: 8px;
+    padding:5px 5px;
+    background-color: aliceblue;
+    border-radius: 25px;
+    border:1px solid gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+#promo-code input{
+    width:75%;
+    font-size: large;
+    margin-left: 15px;
+    background-color: inherit;
+    border:none;
+    padding: 5px 5px;
+    outline: none;
+}
+
+#promo-code button{
+    /* width: 15%; */
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 7px 35px;
+    background-color: black;
+    color: white;
+    /* margin-left: 25px; */
+    /* height: 100%; */
+}
+
+#checkout-container hr{
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color:green;
+
+}
+
+.light-container{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    font-weight: 450;
+    color: #505050;
+}
+
+#total-container{
+    display: flex;
+    justify-content: space-between;
+    /* font-size: 20px; */
+    /* background-color: gainsboro; */
+}
+
+#grand-total-price{
+    font-weight: bolder;
+    font-size: 23px;
+}
+
+#checkout-btn{
+    width: 90%;
+    margin-top: 25px;
+    font-size: 20px;
+    padding:8px 0;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    /* right: 0; */
+}
+
+#checkout-btn:hover,
+#promo-code button:hover{
+    /* opacity: 0.9; */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0,0.5);
+}
+
+
+
