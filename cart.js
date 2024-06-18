@@ -4,6 +4,12 @@ function getCartItems(){
 
     let cartTable = document.getElementById('cart-table');
 
+    if(cartItems.length==0){
+        document.getElementById('cart-items').innerHTML = ('<h1 >Your cart is empty Now</h1>');
+    }
+
+   
+
     cartItems.forEach(product_item => {
 
     let tr = document.createElement('tr');
@@ -129,6 +135,10 @@ function removingItemFromLocalStorage(itemToRemove){
 
     localStorage.setItem('cartItems',JSON.stringify(cartItems));
     changingSubtotal();
+
+    if(cartItems.length==0){
+        document.getElementById('cart-items').innerHTML = ('<h1 >Your cart is empty Now</h1>');
+    }
 
 }
 
