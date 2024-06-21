@@ -347,11 +347,26 @@ function fetchingProducts() {
         var img1 = document.createElement("img");
         img1.src = elem.item[0].img1;
 
-        var h2Price = document.createElement("h2");
-        h2Price.innerHTML = elem.price;
+        let stars = document.createElement('div');
+        stars.classList.add('stars');
+
+        let rating = document.createElement('h5')
+        rating.innerText = '(' + elem.rating + '.00)'
+
+
+        for (let i = 0; i < elem.rating; i++) {
+            let starSymbol = document.createElement('i');
+            starSymbol.setAttribute('class', 'fa-solid fa-star');
+            stars.append(starSymbol);
+        }
+
+        stars.append(rating);
+
+        var h2Price = document.createElement("h4");
+        h2Price.innerHTML = elem.price + '/-Rs';
         console.log(h2Price.innerHTML);
 
-        var h3Title = document.createElement("h3");
+        var h3Title = document.createElement("h5");
         h3Title.innerHTML = elem.name;
         console.log(h3Title.innerHTML);
 
@@ -359,7 +374,7 @@ function fetchingProducts() {
         buyBtn.innerHTML = "Buy Now";
         buyBtn.classList.add("buy-btn");
 
-        div.append(img1, h2Price, h3Title, buyBtn);
+        div.append(img1, stars, h3Title, h2Price);
 
         container.append(div);
 
