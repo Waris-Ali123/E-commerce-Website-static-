@@ -5,7 +5,8 @@ function getCartItems(){
     let cartTable = document.getElementById('cart-table');
 
     if(cartItems.length==0){
-        document.getElementById('cart-items').innerHTML = ('<h1 >Your cart is empty Now</h1>');
+        
+        showCartIsEmpty();
     }
 
    
@@ -29,10 +30,22 @@ function getCartItems(){
     tr.append(imageTd);
 
     //fetching product name
-    let nameTd = document.createElement('td')
+    let nameContainer = document.createElement('td');
+    nameContainer.id = 'nameContainer';
+    
+    let nameTd = document.createElement('div')
     nameTd.innerText = product_item.name;
 
-    tr.append(nameTd);
+    let selectedColor = document.createElement('div');
+    selectedColor.innerText = 'Color: ' + product_item.selectedColor;
+    selectedColor.classList.add('selectedColor');
+    let selectedSize = document.createElement('div');
+    selectedSize.innerText = 'Size: ' + product_item.selectedSize;
+    selectedSize.classList.add('selectedSize');
+
+
+    nameContainer.append(nameTd,selectedColor,selectedSize);
+    tr.append(nameContainer);
 
     //fetching price
     let priceTd = document.createElement('td')
@@ -137,7 +150,8 @@ function removingItemFromLocalStorage(itemToRemove){
     changingSubtotal();
 
     if(cartItems.length==0){
-        document.getElementById('cart-items').innerHTML = ('<h1 >Your cart is empty Now</h1>');
+        // document.getElementById('cart-items').innerHTML = ('<h1 >Your cart is empty Now</h1>');
+        showCartIsEmpty();
     }
 
 }
@@ -155,5 +169,38 @@ function changingSubtotal(){
     document.getElementById('subtotal-price').innerText = subtotal + "/-Rs"
 
     document.getElementById('grand-total-price').innerText = subtotal ;
+
+}
+
+
+
+function showCartIsEmpty(){
+    // <i class="fa-solid fa-cart-shopping"></i>
+    let cartItems = document.getElementById('cart-items');
+
+    let emptyContainer = document.createElement('div');
+    emptyContainer.id = 'empty-container';
+
+    let cartSymbol = document.createElement('i');
+    cartSymbol.setAttribute('class','fa-solid fa-cart-shopping');
+    cartSymbol.id = 'cart-symbol'
+
+    let msg = document.createElement('div');
+    msg.innerText = "Your cart is empty Now...!!!";
+    msg.className = 'empty-msg';
+
+    let returnToHome = document.createElement('a');
+    returnToHome.id = 'return-link'
+    returnToHome.innerText = 'Return to Shop'
+    returnToHome.href = 'index.html';
+
+
+    emptyContainer.append(cartSymbol,msg,returnToHome);
+    cartItems.innerText = "";
+    cartItems.append(emptyContainer);
+    
+
+
+
 
 }

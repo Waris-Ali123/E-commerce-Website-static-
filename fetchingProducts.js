@@ -21,7 +21,7 @@ function fetchingIndividualProducts(result){
 function productAppend(title,price,image1){
     // console.log(title , "  " , price , " " , image1);
     var container = document.getElementById("prod-block");
-    var product = document.getElementById("product");
+    // var product = document.getElementById("product");
     var div = document.createElement("div");
     div.setAttribute("class","product");
     var img1 = document.createElement("img");
