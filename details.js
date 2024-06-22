@@ -168,7 +168,7 @@ function fetchingParticularProduct() {
     addToCartBtn.addEventListener('click', function () {
         addingProductIntoCart(product_item);
         btnContent.innerText = ' Added';
-
+        // addToCartBtn.removeEventListener('click');
     })
 
 
@@ -221,17 +221,22 @@ function addingProductIntoCart(product_item) {
     if (localStorage.getItem('cartItems') == undefined) {
         localStorage.setItem('cartItems', JSON.stringify([]));
     }
-    
-
-    let [color,size] = fetchingColorandSize();
-    product_item = makingProductForCart(product_item,color,size);
 
 
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    let isPresent = isAlreadyPresentInCart(product_item,cartItems);
+    
+    if(isPresent!=false){
 
-    cartItems.push(product_item);
-
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        let [color,size] = fetchingColorandSize();
+        product_item = makingProductForCart(product_item,color,size);
+        
+        
+        
+        cartItems.push(product_item);
+        
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
 
 }
 
@@ -250,4 +255,18 @@ function makingProductForCart(product_item,color,size){
         product_item.selectedSize = size;        
        // console.log(product_item);
        return product_item;
+}
+
+function isAlreadyPresentInCart(product_item,cartItems){
+
+    let [color,size] = fetchingColorandSize();
+
+    for(let i=0;i<cartItems.length;i++){
+        let elem = cartItems[i];
+        if(elem.name == product_item.name && elem.selectedColor==color && elem.selectedSize == size){
+            return false;
+        }
+    };
+    
+    return true;
 }

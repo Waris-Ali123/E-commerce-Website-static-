@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="header.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="UnderMoneerBhai.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col">
                 <img src="https://img.freepik.com/premium-photo/pair-blue-running-sneakers-white-background-isolated_77190-7490.jpg?w=1060" alt="">
-                <div class="details">
+                <div class="details" onclick="fetchingProductsJacketOnly()">
                     <h2>Extreme Rare Sneaker</h2>
                     <button>Shop Now</button>
                 </div>
@@ -95,16 +95,111 @@
 
     </section>
 
+    <!-- for men -->
+    <section class="featured-section">
+        <h1>Products for Men</h1>
+        <div id="prod-block-men" class="prod-block" >
+        </div>
 
-    <section id="prod-block" class="prod-block">
     </section>
+
+    <!-- for women -->
+    <section class="featured-section">
+        <h1>Products for Women</h1>
+        <div id="prod-block-women" class="prod-block" >
+        </div>
+
+    </section>
+
+
+    <!-- for kids  -->
+    <section class="featured-section">
+        <h1>Products for Kids</h1>
+        <div id="prod-block-kids" class="prod-block" >
+        </div>
+
+    </section>
+
+
+    <footer >
+        <div class="row">
+
+          <div class="footer-one one">
+            <img src="images\logo2.png" alt="logo">
+            <p >We collaborate with the big manufacturures and provide that product to the consumer directly as to cut the cost of the brokers and we 
+              provide full guarantee of the product too.</p>
+          </div>
+  
+          <div class="footer-one two">
+            <h5>Featured</h5> 
+            <ul >
+              <li><a href="#">men</a></li>
+              <li><a href="#">women</a></li>
+              <li><a href="#">boys</a></li>
+              <li><a href="#">girls</a></li>
+              <li><a href="#">new arrivals</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">clothes</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-one two">
+            <h5>Contact Us</h5> 
+            <div>
+              <h5 >ADDRESS</h6>
+              <p>123 STREET NO:08, INDORE, INDIA</p>
+            </div>
+            <div>
+              <h5>PHONE</h6>
+              <p>(+91) 8602655070</p>
+            </div>
+            <div>
+              <h5 >EMAIL</h6>
+              <p>gulamwarissheikh786@gmial.com</p>
+            </div>
+          </div>
+
+          <div class="footer-one two">
+            <h5 class="insta-heading">Instagram</h5> 
+            <div class="row">
+              <img src="images/insta/1.jpg" alt="">
+              <img src="images/insta/2.jpg" alt="">
+              <img src="images/insta/3.jpg" alt="">
+              <img src="images/insta/4.jpg" alt="">
+              <img src="images/insta/5.jpg" alt="">
+            </div>
+          </div>
+        </div>
+  
+        <div id="copyright">
+          <div class="row">
+            <div >
+              <img src="images/payment.png" alt="">
+            </div>
+            <div >
+              <p>rymo eCommerce 2021. All Rights Reserved</p>
+            </div>
+            <div>
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+
+
 
 
 
 
 
     <script>
-        fetchingProducts(); 
+        fetchingProductsIntoFeaturedMen(); 
+        fetchingProductsIntoFeaturedWomen();
+        fetchingProductsIntoFeaturedKids();
+
     </script>
 
 

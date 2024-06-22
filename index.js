@@ -1,10 +1,29 @@
 
 // fetchingProducts();
-function fetchingProducts() {
+function fetchingProductsJacketOnly(){
+    let 
+}
 
-    // let productSection = document.getElementById('product-section')
-    var container = document.getElementById("prod-block");
+function fetchingProductsIntoFeaturedMen(){
+    let prodBlock = document.getElementById("prod-block-men");
+    fetchingProducts(prodBlock,'men',6);
+}
 
+function fetchingProductsIntoFeaturedWomen(){
+    let prodBlock = document.getElementById("prod-block-women");
+    fetchingProducts(prodBlock,'women',6);
+}
+
+function fetchingProductsIntoFeaturedKids(){
+    let prodBlock = document.getElementById("prod-block-kids");
+    fetchingProducts(prodBlock,'kids',5);
+} 
+
+
+function fetchingProducts(idfetched,category,length = 10){
+
+    var container = idfetched;
+    var count = 0;
     let productData = [
         {
             "name": "FAUX LEATHER BIKER JACKET",
@@ -330,184 +349,23 @@ function fetchingProducts() {
                     "img4": "https://static.zara.net/photos///2022/I/1/3/p/1116/030/202/2/w/27/1116030202_6_4_1.jpg?ts=1660118470927"
                 }
             ]
-        },
-        {
-            "name": "TWEED BLAZER",
-            "price": 7990,
-            "category": "women",
-            "rating": 4.9,
-            "id": 4,
-            "detail": "Blazer with a lapel collar and long sleeves with buttoned cuffs. Featuring front flap pockets and double-breasted button fastening.",
-            "disc": "Sophisticated tweed blazer, ideal for a polished look.",
-            "item": [
-                {
-                    "color": "white",
-                    "img1": "https://picsum.photos/200/300?random=13",
-                    "img2": "https://picsum.photos/200/300?random=14",
-                    "img3": "https://picsum.photos/200/300?random=15",
-                    "img4": "https://picsum.photos/200/300?random=16"
-                }
-            ]
-        },
-        {
-            "name": "DENIM OVERSIZED JACKET",
-            "price": 5990,
-            "category": "women",
-            "rating": 4.7,
-            "id": 3,
-            "detail": "Oversized denim jacket with a spread collar and long sleeves. Featuring front button fastening and chest flap pockets.",
-            "disc": "Trendy oversized denim jacket, perfect for a casual look.",
-            "item": [
-                {
-                    "color": "light blue",
-                    "img1": "https://picsum.photos/200/300?random=17",
-                    "img2": "https://picsum.photos/200/300?random=18",
-                    "img3": "https://picsum.photos/200/300?random=19",
-                    "img4": "https://picsum.photos/200/300?random=20"
-                },
-                {
-                    "color": "dark blue",
-                    "img1": "https://picsum.photos/200/300?random=21",
-                    "img2": "https://picsum.photos/200/300?random=22",
-                    "img3": "https://picsum.photos/200/300?random=23",
-                    "img4": "https://picsum.photos/200/300?random=24"
-                }
-            ]
-        },
-        {
-            "name": "TWEED BLAZER",
-            "price": 7990,
-            "category": "women",
-            "rating": 4.9,
-            "id": 4,
-            "detail": "Blazer with a lapel collar and long sleeves with buttoned cuffs. Featuring front flap pockets and double-breasted button fastening.",
-            "disc": "Sophisticated tweed blazer, ideal for a polished look.",
-            "item": [
-                {
-                    "color": "white",
-                    "img1": "https://picsum.photos/200/300?random=25",
-                    "img2": "https://picsum.photos/200/300?random=26",
-                    "img3": "https://picsum.photos/200/300?random=27",
-                    "img4": "https://picsum.photos/200/300?random=28"
-                },
-                {
-                    "color": "black",
-                    "img1": "https://picsum.photos/200/300?random=29",
-                    "img2": "https://picsum.photos/200/300?random=30",
-                    "img3": "https://picsum.photos/200/300?random=31",
-                    "img4": "https://picsum.photos/200/300?random=32"
-                }
-            ]
-        },
-        {
-            "name": "FLORAL PRINT DRESS",
-            "price": 4990,
-            "category": "women",
-            "rating": 4.6,
-            "id": 5,
-            "detail": "Dress featuring a V-neckline and short sleeves. Elastic waist and ruffled hem. All-over floral print.",
-            "disc": "Elegant floral print dress, perfect for summer outings.",
-            "item": [
-                {
-                    "color": "multicolor",
-                    "img1": "https://picsum.photos/200/300?random=33",
-                    "img2": "https://picsum.photos/200/300?random=34",
-                    "img3": "https://picsum.photos/200/300?random=35",
-                    "img4": "https://picsum.photos/200/300?random=36"
-                },
-                {
-                    "color": "red",
-                    "img1": "https://picsum.photos/200/300?random=37",
-                    "img2": "https://picsum.photos/200/300?random=38",
-                    "img3": "https://picsum.photos/200/300?random=39",
-                    "img4": "https://picsum.photos/200/300?random=40"
-                }
-            ]
-        },
-        {
-            "name": "KIDS' DINOSAUR SWEATSHIRT",
-            "price": 1990,
-            "category": "kids",
-            "rating": 4.5,
-            "id": 6,
-            "detail": "Long sleeve sweatshirt with a round neckline. Featuring a dinosaur print on the front.",
-            "disc": "Fun and comfortable sweatshirt with a cute dinosaur print.",
-            "item": [
-                {
-                    "color": "green",
-                    "img1": "https://picsum.photos/200/300?random=41",
-                    "img2": "https://picsum.photos/200/300?random=42",
-                    "img3": "https://picsum.photos/200/300?random=43",
-                    "img4": "https://picsum.photos/200/300?random=44"
-                },
-                {
-                    "color": "blue",
-                    "img1": "https://picsum.photos/200/300?random=45",
-                    "img2": "https://picsum.photos/200/300?random=46",
-                    "img3": "https://picsum.photos/200/300?random=47",
-                    "img4": "https://picsum.photos/200/300?random=48"
-                }
-            ]
-        },
-        {
-            "name": "KIDS' PUFFER JACKET",
-            "price": 3990,
-            "category": "kids",
-            "rating": 4.8,
-            "id": 7,
-            "detail": "Puffer jacket with a hood and zip-up front. Featuring side pockets and elastic cuffs.",
-            "disc": "Warm and cozy puffer jacket for kids, ideal for winter.",
-            "item": [
-                {
-                    "color": "red",
-                    "img1": "https://picsum.photos/200/300?random=49",
-                    "img2": "https://picsum.photos/200/300?random=50",
-                    "img3": "https://picsum.photos/200/300?random=51",
-                    "img4": "https://picsum.photos/200/300?random=52"
-                },
-                {
-                    "color": "blue",
-                    "img1": "https://picsum.photos/200/300?random=53",
-                    "img2": "https://picsum.photos/200/300?random=54",
-                    "img3": "https://picsum.photos/200/300?random=55",
-                    "img4": "https://picsum.photos/200/300?random=56"
-                }
-            ]
-        },
-        {
-            "name": "KIDS' STRIPED T-SHIRT",
-            "price": 990,
-            "category": "kids",
-            "rating": 4.7,
-            "id": 8,
-            "detail": "Short sleeve T-shirt with a round neckline. All-over striped pattern.",
-            "disc": "Comfortable and stylish striped T-shirt for kids.",
-            "item": [
-                {
-                    "color": "blue and white",
-                    "img1": "https://picsum.photos/200/300?random=57",
-                    "img2": "https://picsum.photos/200/300?random=58",
-                    "img3": "https://picsum.photos/200/300?random=59",
-                    "img4": "https://picsum.photos/200/300?random=60"
-                },
-                {
-                    "color": "red and white",
-                    "img1": "https://picsum.photos/200/300?random=61",
-                    "img2": "https://picsum.photos/200/300?random=62",
-                    "img3": "https://picsum.photos/200/300?random=63",
-                    "img4": "https://picsum.photos/200/300?random=64"
-                }
-            ]
         }
     ]
 
-    console.log(productData[0]);
-    console.log(productData[0].item[0].img1);
-    console.log(productData[0].price);
 
+    for(let i=0;i<productData.length;i++){
 
+        
+        let elem = productData[i];
+        if(elem.category != category){
+            continue;
+        }
 
-    productData.forEach(elem => {
+        count++;
+        if(count>length){
+            break;
+        }
+        
 
         var div = document.createElement("div");
         div.setAttribute("class", "product");
@@ -532,11 +390,9 @@ function fetchingProducts() {
 
         var h2Price = document.createElement("h4");
         h2Price.innerHTML = elem.price + '/-Rs';
-        console.log(h2Price.innerHTML);
 
         var h3Title = document.createElement("h5");
         h3Title.innerHTML = elem.name;
-        console.log(h3Title.innerHTML);
 
         buyBtn = document.createElement("button");
         buyBtn.innerHTML = "Buy Now";
@@ -550,13 +406,17 @@ function fetchingProducts() {
             openPage(elem)
         }
 
-    });
+        
+
+
+
+    }
 
     function openPage(elem) {
-        console.log(elem);
-        localStorage.setItem('product-item', JSON.stringify(elem))
+        localStorage.setItem('product-item', JSON.stringify(elem));
         window.location.href = "details.html"
     }
 
 
 }
+

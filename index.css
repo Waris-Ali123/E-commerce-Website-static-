@@ -147,19 +147,24 @@ hr{
 #banner-section button{
     /* width: 100px; */
     /* border-radius: 5px; */
+    cursor: pointer;
     background: none;
     border: none;
     color:rgb(92, 0, 0);
     font-weight: 700;
     font-size: 23px;
     border-bottom: 1px solid rgb(92, 0, 0);
+    padding: 4px;
+
     /* background-color: rgb(92, 0, 0); */
     /* padding: 5px 10px; */
 }
 
 #banner-section button:hover{
-    color:rgb(255, 255, 255);
-    border-color: white;
+    /* color:rgb(255, 255, 255); */
+    /* border-color: white; */
+    background-color: rgba(0, 0, 0, 0.266);
+    border-radius: 5px;
 }
 
 /* brand section */
@@ -206,10 +211,14 @@ hr{
     width: 100%;
     height: 100%;
     padding: 0 5px;
+    
 }
 
 #catagories .col .details h2{
     font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.504);
+    border-radius: 3px;
+    padding: 0 3px;
 }
 
 #catagories .col .details button{
@@ -219,7 +228,7 @@ hr{
     transform: translateY(30px);
     border-bottom:1px solid #080808;  
     padding:3px;
-
+    cursor: pointer;
 }
 
 #catagories .col .details button:hover{
@@ -253,7 +262,15 @@ hr{
 
 
 
-
+/* featured section */
+.featured-section{
+    margin: 35px;
+}
+.featured-section h1{
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 25px;
+}
 
 
 .prod-block{
@@ -266,7 +283,7 @@ hr{
     text-align: center;
     gap: 10px;
     /* margin-top: 35px; */
-    background-color: antiquewhite;
+    background-color: white;
 }
 
 .product {
@@ -287,10 +304,6 @@ hr{
     /* height: 60%; */
     /* margin-bottom: 5px; */
     border-radius: 5%;
-}
-
-.product:hover img{
-    /* opacity: 0.8; */
 }
 
 .product .stars{
@@ -331,6 +344,7 @@ hr{
 
 .product:hover {
     /* opacity: .8; */
+    box-sizing: content-box;
     border: 1px solid green;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -364,6 +378,144 @@ hr{
 } */
 
 
+/* footer section  */
+footer{
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: rgb(34, 34, 34);
+    color:rgb(153, 153, 153);
+}
+
+footer .row {
+    width:80%;
+    margin:0 auto;
+    /* padding-top: 20px;
+     */
+    display: flex;
+    flex-wrap: wrap;
+    /* gap:25px; */
+}
+
+footer .footer-one{
+    width: 23%;
+    padding: 25px;
+}
+
+footer .one p{
+    padding-top: 12px;
+    font-size: small;
+    text-align: justify;
+}
+
+footer .two {
+    margin-bottom: 12px;
+    /* text-align: center; */
+
+}
+
+footer .two h5{
+    padding-bottom: 8px;
+    color:rgb(216, 216, 216);
+    font-size: 19px;
+}
+
+footer .two ul{
+    text-transform: uppercase;
+    list-style:none;
+    font-size: small;
+}
+
+footer .two ul li {
+     padding:5px 0;
+}
+
+footer .two ul li a{
+    color:rgb(153, 153, 153);
+    text-decoration: none;  
+}
+
+footer .two ul li a:hover{
+    color:rgb(216, 216, 216)
+}
+
+footer .two div{
+    margin-bottom: 10px;
+}
+
+footer .two div p{
+    font-size: small;
+}
+
+
+footer .two .row{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: left; */
+    flex-wrap: wrap;
+    margin:0 ;
+}
+
+footer .two .row img{
+    width:20%;
+    margin:5px;
+    /* height: 100%; */
+    /* margin-left:-8px; */
+}
+
+footer .two .insta-heading{
+    /* margin-left: 20px; */
+}
+
+
+#copyright{
+    width: 100%;
+}
+
+#copyright .row{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    /* align-items: center; */
+    /* justify-content: center; */
+
+}
+
+#copyright .row div{
+    width: 33%;
+    display: flex;
+    column-gap: 15px;
+    /* background-color: azure; */
+}
+
+#copyright .row:nth-child(1) div{
+    align-items:center;
+    justify-content:left ;
+    padding:0 25px;
+}
+
+#copyright .row div p{
+    text-wrap: nowrap;
+}
+
+#copyright .row div i{
+    padding:10px 12px;
+    border-radius: 50%;
+    font-size: large;
+    color: black;
+    background-color: white;
+    /* margin: 0 15px; */
+}
+
+#copyright .row div i:hover{
+    color:white;
+    background-color:  #fb774b;;
+}
+
+
+
 
 
 
@@ -378,7 +530,7 @@ hr{
 
 /* Media Query Stars */
 
-@media screen and (max-width:766px) {
+@media screen and (max-width:990px) {
     #header {
         padding: 0 20px;
     }
@@ -440,7 +592,29 @@ hr{
         height: 500px;
     }
 
+    footer .footer-one{
+        width: 50%;
+    }
 
-
+    #copyright .row div{
+        width:50%;
+    }
 }
+
+
+@media screen and (max-width:463px){
+    footer .footer-one{
+        width: 100%;
+    }
+
+    /* #copyright .row{
+        width:100%;
+    } */
+
+    #copyright .row div{
+        width:100%;
+    }
+}
+
+
 
