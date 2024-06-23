@@ -2,13 +2,15 @@ function getCartItems(){
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
     console.log(cartItems);
 
+    
     let cartTable = document.getElementById('cart-table');
-
+    
     if(cartItems.length==0){
         
         showCartIsEmpty();
     }
-
+    
+    document.getElementById('totalcount').innerText = '(' + cartItems.length + ")";
    
 
     cartItems.forEach(product_item => {
@@ -143,8 +145,14 @@ function updateTotalPrice(tr,count,price){
 
 function removingItemFromLocalStorage(itemToRemove){
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    // console.log(itemToRemove.selectedColor)
     
-    cartItems = cartItems.filter(product_item => product_item.id !== itemToRemove.id);
+    cartItems = cartItems.filter(product_item => {
+        if(product_item.id == itemToRemove.id && product_item.selectedColor == itemToRemove.selectedColor && product_item.selectedSize == itemToRemove.selectedSize){
+            return false;
+        }
+        return true;
+});
 
     localStorage.setItem('cartItems',JSON.stringify(cartItems));
     changingSubtotal();

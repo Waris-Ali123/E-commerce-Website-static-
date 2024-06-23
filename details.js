@@ -100,6 +100,7 @@ function fetchingParticularProduct() {
         colorBtn.addEventListener('click', function () {
             changeImagesUsingColor(product_item.item[i], mainImg, img1, img2, img3, img4);
             document.getElementById('selectedColor').innerText = 'Color: ' + product_item.item[i].color;
+            changingButtonInnerText(product_item);
         });
     }
 
@@ -138,6 +139,8 @@ function fetchingParticularProduct() {
             let selectedSize = document.getElementById('sizeSelected');
             selectedSize.innerText = `Size: ${size}`;
 
+            changingButtonInnerText(product_item);
+
         }
         sizeButtons.appendChild(sizeBtn);
             
@@ -162,12 +165,14 @@ function fetchingParticularProduct() {
     shoppingBag.setAttribute('class', "fa-solid fa-bag-shopping");
 
     let btnContent = document.createElement('span');
-    btnContent.innerText = ' Add to Cart';
+    btnContent.id = 'btnContent';
+    btnContent.innerText = 'Add to Cart';
 
     addToCartBtn.append(shoppingBag, btnContent);
+
     addToCartBtn.addEventListener('click', function () {
         addingProductIntoCart(product_item);
-        btnContent.innerText = ' Added';
+        btnContent.innerText = 'Added';
         // addToCartBtn.removeEventListener('click');
     })
 
@@ -196,7 +201,6 @@ function fetchingParticularProduct() {
 
     detailsContainer.append(name, stars, price, colorContainer, sizeContainer, addToCartContainer, descriptionContainer)
 
-
     //appending the imgContainer and detailsContainer into productRow
     productRow.append(imgContainer, detailsContainer);
 
@@ -218,20 +222,14 @@ function changeImagesUsingColor(item, mainImg, img1, img2, img3, img4) {
 
 
 function addingProductIntoCart(product_item) {
-    if (localStorage.getItem('cartItems') == undefined) {
-        localStorage.setItem('cartItems', JSON.stringify([]));
-    }
-
-
-    let cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    let cartItems = fetchingCartItemsFromLocalStorage();
+    
     let isPresent = isAlreadyPresentInCart(product_item,cartItems);
     
-    if(isPresent!=false){
+    if(isPresent==false){
 
         let [color,size] = fetchingColorandSize();
         product_item = makingProductForCart(product_item,color,size);
-        
-        
         
         cartItems.push(product_item);
         
@@ -242,7 +240,7 @@ function addingProductIntoCart(product_item) {
 
 
 function fetchingColorandSize(){
-    let color='blue' , size='XS' ;
+    let color , size ;
     color = document.getElementById('selectedColor').innerText.split(':')[1].trim();
     size = document.getElementById('sizeSelected').innerText.split(':')[1].trim();
 
@@ -264,9 +262,42 @@ function isAlreadyPresentInCart(product_item,cartItems){
     for(let i=0;i<cartItems.length;i++){
         let elem = cartItems[i];
         if(elem.name == product_item.name && elem.selectedColor==color && elem.selectedSize == size){
-            return false;
+            return true;
         }
     };
     
-    return true;
+    return false;
+}
+
+function changingButtonInnerText(product_item){   //used whether to show added or addtocart innertext on addtocart button;
+
+    // let color , size ;
+    // color = document.getElementById('selectedColor').innerText.split(':')[1].trim();
+    // size = document.getElementById('sizeSelected').innerText.split(':')[1].trim();
+
+    let cartItems = fetchingCartItemsFromLocalStorage();
+    let isPresent = isAlreadyPresentInCart(product_item,cartItems);
+
+    if(isPresent){
+        document.getElementById('btnContent').innerText = 'Added';
+    }
+    else{
+        document.getElementById('btnContent').innerText = 'Add to cart';
+    }
+
+    
+
+
+}
+
+
+// function cart items from localStorage
+function fetchingCartItemsFromLocalStorage(){
+    if (localStorage.getItem('cartItems') == undefined) {
+        localStorage.setItem('cartItems', JSON.stringify([]));
+    }
+
+
+    let cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    return cartItems;
 }
