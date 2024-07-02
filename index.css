@@ -64,6 +64,7 @@ hr {
     flex-wrap: wrap;
     justify-content: flex-end;
     list-style: none;
+    align-items: center;
     /* margin:auto; */
 }
 
@@ -106,11 +107,16 @@ hr {
 }
 
 #search-bar{
-    transition: 2s ease;
+    transition: 0.2s ease;
+    padding:5px;
+    border-radius: 25px;
+    color:rgb(0, 214, 199);
 }
 
 #search-bar:hover{
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
+    background-color: #080808;
+    color: white;;
 }
 
 /* banner section */

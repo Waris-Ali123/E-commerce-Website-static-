@@ -51,7 +51,7 @@
             <h3>New Arrivals</h3>
             <h1><span>Best Price</span> This Year</h1>
             <p>Shoomatic offers your very comfortable time on walking and exercises.</p>
-            <button>Shop Now</button>
+            <button onclick='gotoShopPage()'>Shop Now</button>
         </div>
     </section>
 
@@ -198,6 +198,10 @@
         fetchingProductsIntoFeaturedMen(); 
         fetchingProductsIntoFeaturedWomen();
         fetchingProductsIntoFeaturedKids();
+        function gotoShopPage(){
+          console.log('called')
+          window.location.href = "shop.html";
+        }
 
     </script>
 

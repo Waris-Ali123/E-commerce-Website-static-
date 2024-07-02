@@ -101,6 +101,7 @@ function fetchingParticularProduct() {
             changeImagesUsingColor(product_item.item[i], mainImg, img1, img2, img3, img4);
             document.getElementById('selectedColor').innerText = 'Color: ' + product_item.item[i].color;
             changingButtonInnerText(product_item);
+
         });
     }
 
@@ -172,9 +173,11 @@ function fetchingParticularProduct() {
 
     addToCartBtn.addEventListener('click', function () {
         addingProductIntoCart(product_item);
-        btnContent.innerText = 'Added';
-        // addToCartBtn.removeEventListener('click');
+        btnContent.innerText = 'Go to cart';
+        
     })
+
+    
 
 
     addToCartContainer.append(addToCartBtn);
@@ -199,17 +202,19 @@ function fetchingParticularProduct() {
     let image = document.createElement('img')
     image.src = product_item.item[0].img1
 
-    detailsContainer.append(name, stars, price, colorContainer, sizeContainer, addToCartContainer, descriptionContainer)
+    detailsContainer.append(name, stars, price, colorContainer, sizeContainer, addToCartContainer, descriptionContainer);
 
     //appending the imgContainer and detailsContainer into productRow
     productRow.append(imgContainer, detailsContainer);
 
     itemSection.append(productRow);
+
+    changingButtonInnerText(product_item); //to overwrite the 'add to cart' if the product is already inside the cart
     
 }
 
 
-
+//function to change the images in mainframe
 function changeImagesUsingColor(item, mainImg, img1, img2, img3, img4) {
     mainImg.src = item.img1;
     img1.src = item.img1;
@@ -217,7 +222,7 @@ function changeImagesUsingColor(item, mainImg, img1, img2, img3, img4) {
     img3.src = item.img3;
     img4.src = item.img4;
 
-}
+}   
 
 
 
@@ -232,13 +237,16 @@ function addingProductIntoCart(product_item) {
         product_item = makingProductForCart(product_item,color,size);
         
         cartItems.push(product_item);
+        console.log(cartItems);
         
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }
-
+    else{
+        window.location.href = 'cart.html';
+    }
 }
 
-
+//function that fetches the color and size selected by user to order
 function fetchingColorandSize(){
     let color , size ;
     color = document.getElementById('selectedColor').innerText.split(':')[1].trim();
@@ -247,10 +255,12 @@ function fetchingColorandSize(){
     return [color,size];
 }
 
+//function to add the fetched color,size and quantity into localstorage productItem
 function makingProductForCart(product_item,color,size){
         // console.log(product_item);
         product_item.selectedColor = color;
-        product_item.selectedSize = size;        
+        product_item.selectedSize = size;
+        product_item.quantity = 1;        
        // console.log(product_item);
        return product_item;
 }
@@ -279,7 +289,7 @@ function changingButtonInnerText(product_item){   //used whether to show added o
     let isPresent = isAlreadyPresentInCart(product_item,cartItems);
 
     if(isPresent){
-        document.getElementById('btnContent').innerText = 'Added';
+        document.getElementById('btnContent').innerText = 'Go to cart';
     }
     else{
         document.getElementById('btnContent').innerText = 'Add to cart';
